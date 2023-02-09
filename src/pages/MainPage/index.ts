@@ -1,3 +1,3 @@
-import {MainPageLazy} from './ui/MainPageLazy'
+import { MainPageLazy } from './ui/MainPageLazy'
 
-export {MainPageLazy as MainPage }
+export { MainPageLazy as MainPage }
