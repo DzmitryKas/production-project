@@ -33,7 +33,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }]
+        'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }]
     },
     globals: {
         __IS_DEV__: true
