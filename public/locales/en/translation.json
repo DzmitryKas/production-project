@@ -2,5 +2,8 @@
   "О компании": "About page",
   "Главная": "Main page",
   "Язык": "English",
-  "Страница не найдера": "Page not found"
+  "Страница не найдера": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Перезагрузка": "Reload",
+  "Ошибка": "Error"
 }
