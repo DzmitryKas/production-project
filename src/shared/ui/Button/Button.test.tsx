@@ -1,5 +1,5 @@
-import {render, screen} from '@testing-library/react'
-import Button, {EThemeButton} from './Button'
+import { render, screen } from '@testing-library/react'
+import Button, { EThemeButton } from './Button'
 
 describe('Button', () => {
     test('without theme', () => {

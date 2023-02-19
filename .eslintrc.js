@@ -32,14 +32,16 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         'n/handle-callback-err': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }]
+        'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        'react/display-name': 'off'
     },
     globals: {
         __IS_DEV__: true
     },
     overrides: [
         {
-            files: ['**/src/**/*.test.{ts, tsx}'],
+            files: ['./src/**/*.test.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off'
             }
