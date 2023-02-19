@@ -17,15 +17,15 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev)
-        }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false
         })
     ]
 
     if (isDev) {
         plagins.push(new ReactRefreshWebpackPlugin())
         plagins.push(new webpack.HotModuleReplacementPlugin())
+        plagins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        }))
     }
 
     return plagins
