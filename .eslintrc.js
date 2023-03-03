@@ -38,7 +38,8 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
         'react/display-name': 'off',
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error'
+        'react-hooks/exhaustive-deps': 'error',
+        'react/prop-types': 'off'
     },
     globals: {
         __IS_DEV__: true

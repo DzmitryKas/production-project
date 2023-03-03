@@ -3,5 +3,6 @@ import Button, { EButtonTheme } from './Button/Button'
 import Loader from './Loader/Loader'
 import Modal from './Modal/Modal'
 import Portal from './Portal/Portal'
+export { Input } from './Input/Input'
 
 export { AppLink, Button, EButtonTheme, Loader, Modal, Portal }
