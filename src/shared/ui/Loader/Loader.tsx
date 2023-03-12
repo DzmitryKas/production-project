@@ -14,4 +14,4 @@ const Loader: FC<ILoaderProps> = ({ className }) => {
     )
 }
 
-export default Loader
+export { Loader }

@@ -1,12 +1,12 @@
 import { getCounterValue } from './getCounterValue'
 import { type DeepPartial } from '@reduxjs/toolkit'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type IStateSchema } from 'app/providers/StoreProvider'
 
 describe('getCounterValue.test', () => {
-    const state: DeepPartial<StateSchema> = {
+    const state: DeepPartial<IStateSchema> = {
         counter: { value: 10 }
     }
     test('', () => {
-        expect(getCounterValue(state as StateSchema)).toEqual(10)
+        expect(getCounterValue(state as IStateSchema)).toEqual(10)
     })
 })

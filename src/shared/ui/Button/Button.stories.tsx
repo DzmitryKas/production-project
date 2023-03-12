@@ -1,6 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import Button, { EButtonSize, EButtonTheme } from './Button'
+import { Button, EButtonSize, EButtonTheme } from './Button'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { ETheme } from 'app/providers/ThemeProvider'
 
@@ -93,4 +93,11 @@ SquareSizeXL.args = {
     theme: EButtonTheme.BACKGROUND_INVERTED,
     square: true,
     size: EButtonSize.XL
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+    children: '>',
+    theme: EButtonTheme.OUTLINE,
+    disabled: true
 }

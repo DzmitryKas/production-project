@@ -74,4 +74,4 @@ const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose, lazy }) 
     )
 }
 
-export default Modal
+export { Modal }

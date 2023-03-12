@@ -1,34 +1,61 @@
-import { type FC } from 'react'
+import { type FC, memo, useCallback } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Button, Input } from 'shared/ui'
+import { Button, EButtonTheme, Input, ETextTheme, Text } from 'shared/ui'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginActions } from '../../model/slice/loginSlice'
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 
 interface ILoginFormProps {
     className?: string
 }
 
-const LoginForm: FC<ILoginFormProps> = ({ className }) => {
+const LoginForm: FC<ILoginFormProps> = memo(({ className }) => {
     const { t } = useTranslation()
+    const dispatch = useDispatch()
+    const { username, password, error, isLoading } = useSelector(getLoginState)
+
+    const onChangeUsername = useCallback((value: string) => {
+        dispatch(loginActions.setUsername(value))
+    }, [dispatch])
+
+    const onChangePassword = useCallback((value: string) => {
+        dispatch(loginActions.setPassword(value))
+    }, [dispatch])
+
+    const onLoginClick = useCallback(() => {
+        dispatch(loginByUsername({ username, password }))
+    }, [dispatch, password, username])
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
+            <Text title={t('Форма авторизации')} />
+            {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={ETextTheme.ERROR}/>}
             <Input
                 autoFocus
                 className={cls.input}
                 placeholder={t('Введите username')}
+                onChange={onChangeUsername}
+                value={username}
             />
             <Input
                 className={cls.input}
                 placeholder={t('Введите пароль')}
+                onChange={onChangePassword}
+                value={password}
             />
             <Button
+                theme={EButtonTheme.OUTLINE}
                 className={cls.loginBtn}
+                onClick={onLoginClick}
+                disabled={isLoading}
             >
                 {t('Войти')}
             </Button>
         </div>
     )
-}
+})
 
 export { LoginForm }

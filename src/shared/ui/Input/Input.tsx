@@ -70,7 +70,7 @@ const Input: FC<IInputProps> = memo((props) => {
                 />
                 {isFocused &&
                     <span
-                        style={{ left: `${caretPosition * 6.5}px` }}
+                        style={{ left: `${caretPosition * 9}px` }}
                         className={cls.caret}
                     />
                 }

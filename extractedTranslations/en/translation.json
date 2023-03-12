@@ -1,4 +1,5 @@
 {
+  "": "",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Ipsa maiores praesentium saepe sed sunt": {
       " Ex harum maxime nostrum quisquam sed": {
@@ -6,15 +7,20 @@
       }
     }
   },
+  "decrement": "",
+  "increment": "",
   "toggle": "",
   "Введите username": "",
   "Введите пароль": "",
   "Войти": "",
+  "Вы ввели неверный логин или пароль": "",
+  "Выйти": "",
   "Главная": "",
   "О компании": "",
   "О сайте": "",
   "Перезагрузка": "",
   "Произошла непредвиденная ошибка": "",
   "Страница не найдера": "",
+  "Форма авторизации": "",
   "Язык": ""
 }

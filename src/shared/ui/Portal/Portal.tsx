@@ -12,4 +12,4 @@ const Portal: FC<IPortalProps> = ({ children, element = document.body }) => {
     )
 }
 
-export default Portal
+export { Portal }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import AppLink, { EAppLinkTheme } from './AppLink'
+import { AppLink, EAppLinkTheme } from './AppLink'
 import { ETheme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
