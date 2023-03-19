@@ -40,7 +40,8 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'react/prop-types': 'off',
-        '@typescript-eslint/no-dynamic-delete': 'off'
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/no-misused-promises': 'off'
     },
     globals: {
         __IS_DEV__: true

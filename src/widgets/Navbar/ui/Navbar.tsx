@@ -1,4 +1,4 @@
-import { type FC, useCallback, useState } from 'react'
+import { type FC, memo, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 import { Button, EButtonTheme } from 'shared/ui'
@@ -11,7 +11,7 @@ interface INavbarProps {
     className?: string
 }
 
-const Navbar: FC<INavbarProps> = ({ className }) => {
+const Navbar: FC<INavbarProps> = memo(({ className }) => {
     const [isAuthModal, setIsAuthModal] = useState(false)
     const { t } = useTranslation()
     const authData = useSelector(getUserAuthData)
@@ -47,6 +47,6 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </div>
     )
-}
+})
 
 export default Navbar

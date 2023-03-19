@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Button, EButtonTheme } from 'shared/ui'
@@ -8,7 +8,7 @@ interface ILangSwitcherProps {
     short?: boolean
 }
 
-const LangSwitcher: FC<ILangSwitcherProps> = ({ className, short }) => {
+const LangSwitcher: FC<ILangSwitcherProps> = memo(({ className, short }) => {
     const { t, i18n } = useTranslation()
 
     const onToggle = () => {
@@ -22,6 +22,6 @@ const LangSwitcher: FC<ILangSwitcherProps> = ({ className, short }) => {
         </Button>
 
     )
-}
+})
 
 export default LangSwitcher
