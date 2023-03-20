@@ -1,12 +1,16 @@
-import { configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
-import { type IStateSchema } from './stateSchema'
+import { type CombinedState, configureStore, type ReducersMapObject, type Reducer } from '@reduxjs/toolkit'
+import { type IStateSchema, type IThunkExtraArg } from './stateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
+import { $api } from 'shared/api/api'
+import { type To } from '@remix-run/router'
+import { type NavigateOptions } from 'react-router/dist/lib/context'
 
 export function createReduxStore (
     initialState?: IStateSchema,
-    asyncReducer?: ReducersMapObject<IStateSchema>
+    asyncReducer?: ReducersMapObject<IStateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void
 ) {
     const rootReducer: ReducersMapObject<IStateSchema> = {
         ...asyncReducer,
@@ -16,10 +20,20 @@ export function createReduxStore (
 
     const reducerManager = createReducerManager(rootReducer)
 
-    const store = configureStore<IStateSchema>({
-        reducer: reducerManager.reduce,
+    const extraArg: IThunkExtraArg = {
+        api: $api,
+        navigate
+    }
+
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
         devTools: __IS_DEV__,
-        preloadedState: initialState
+        preloadedState: initialState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: extraArg
+            }
+        })
     })
 
     // @ts-expect-error

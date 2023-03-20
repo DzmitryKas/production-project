@@ -6,7 +6,7 @@ import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { type ISidebarItem } from '../../model/items'
 
 interface ISidebarItemProps {
-    item?: ISidebarItem
+    item: ISidebarItem
     collapsed: boolean
 }
 

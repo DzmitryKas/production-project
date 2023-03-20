@@ -41,10 +41,13 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'react/prop-types': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
-        '@typescript-eslint/no-misused-promises': 'off'
+        '@typescript-eslint/no-misused-promises': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-invalid-void-type': 'warn'
     },
     globals: {
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: true
     },
     overrides: [
         {

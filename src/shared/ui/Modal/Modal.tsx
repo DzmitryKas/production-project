@@ -1,7 +1,8 @@
-import React, { useState, type FC, type ReactNode, useRef, useEffect, useCallback } from 'react'
+import React, { useState, type FC, type ReactNode, useRef, useEffect, useCallback, type MutableRefObject } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './Modal.module.scss'
 import { Portal } from 'shared/ui'
+import { type TMods } from 'shared/lib/classNames/classNames'
 
 interface IModalProps {
     className?: string
@@ -16,7 +17,7 @@ const ANIMATION_DELAY = 300
 const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose, lazy }) => {
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
-    const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
     useEffect(() => {
         if (isOpen) {
@@ -52,7 +53,7 @@ const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose, lazy }) 
         }
     }, [isOpen, onKeyDown])
 
-    const mods = {
+    const mods: TMods = {
         [cls.opened]: isOpen,
         [cls.closing]: isClosing
     }
