@@ -4,14 +4,23 @@ import cls from './SidebarItem.module.scss'
 import { useTranslation } from 'react-i18next'
 import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { type ISidebarItem } from '../../model/items'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 
 interface ISidebarItemProps {
     item: ISidebarItem
     collapsed: boolean
+    authOnly?: boolean
 }
 
 const SidebarItem: FC<ISidebarItemProps> = memo(({ item, collapsed }) => {
     const { t } = useTranslation()
+
+    const isAuth = useSelector(getUserAuthData)
+
+    if (!isAuth && item.authOnly) {
+        return null
+    }
 
     return (
         <AppLink
