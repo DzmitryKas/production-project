@@ -19,6 +19,8 @@ import { type ECountry } from 'entities/Country'
 import { ETextTheme, Text } from 'shared/ui'
 import { EValidateProfileError } from 'entities/Profile/model/types/profile'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 const initialReducers: TReducersList = {
     profile: profileReducer
@@ -36,6 +38,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     const isLoading = useSelector(getProfileIsLoading)
     const readonly = useSelector(getProfileReadonly)
     const validateErrors = useSelector(getProfileValidateErrors)
+    const { id } = useParams<{ id: string }>()
 
     const validateErrorTranslates = {
         [EValidateProfileError.INCORRECT_USER_DATA]: t('Имя  и фамилия обязательны'),
@@ -45,9 +48,9 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
         [EValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении')
     }
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') { dispatch(fetchProfileData()) }
-    }, [dispatch])
+    useInitialEffect(() => {
+        id && dispatch(fetchProfileData(id))
+    })
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }))

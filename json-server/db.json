@@ -14,7 +14,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -94,6 +96,12 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "adf",
+      "id": "xSdCb_y"
     }
   ],
   "users": [
@@ -105,20 +113,34 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "dzmitry",
       "password": "123",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
       "role": "USER"
     }
   ],
-  "profile": {
-    "first": "Тимур",
-    "lastname": "Ульби",
-    "age": 345,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.youtube.com%2Fc%2FUlbiTV&psig=AOvVaw28SxRSC-fFhYsMJ1fUp4ZE&ust=1682622989948000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIDDpp6hyP4CFQAAAAAdAAAAABAE"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Тимур",
+      "lastname": "Ульби",
+      "age": 345,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AGIKgqMD6XXncBPhVEtWuOnLlHw2WXg8audkRa6rJBKucw=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "2",
+      "first": "Дмитрий",
+      "lastname": "Касперович",
+      "age": 34,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "dzmitry",
+      "avatar": "https://media.licdn.com/dms/image/C4D03AQHOEQfQi417lA/profile-displayphoto-shrink_800_800/0/1568182302920?e=2147483647&v=beta&t=T_BN5OGQCsZc5wdysrHHqp9aZSX2AF1bdzJud3Z-dAY"
+    }
+  ]
 }

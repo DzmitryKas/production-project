@@ -10,6 +10,7 @@ export enum EValidateProfileError {
 }
 
 export interface IProfile {
+    id?: string
     first?: string
     lastname?: string
     age?: number
@@ -21,6 +22,7 @@ export interface IProfile {
 }
 
 export interface IProfileSchema {
+    id?: string
     data?: IProfile
     form?: IProfile
     isLoading: boolean
