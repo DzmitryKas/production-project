@@ -3,9 +3,9 @@ import { classNames } from 'shared/lib'
 import cls from './SidebarItem.module.scss'
 import { useTranslation } from 'react-i18next'
 import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink'
-import { type ISidebarItem } from '../../model/items'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User'
+import { type ISidebarItem } from 'widgets/Sidebar/model/types/sidebar'
 
 interface ISidebarItemProps {
     item: ISidebarItem
