@@ -1,3 +1,4 @@
+import { type IUser } from 'entities/User'
 
 export interface IArticleBlockBase {
     id: string
@@ -36,9 +37,15 @@ export enum EArticleType {
     ECONOMICS = 'economics'
 }
 
+export enum EArticleView {
+    BIG = 'BIG',
+    SMALL = 'SMALL'
+}
+
 export interface IArticle {
     id: string
     title: string
+    user: IUser
     subtitle: string
     img: string
     views: number

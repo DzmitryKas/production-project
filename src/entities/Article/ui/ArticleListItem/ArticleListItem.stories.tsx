@@ -1,18 +1,16 @@
 import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
-import { ArticleDetails } from './ArticleDetails'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
-import { type IArticle } from 'entities/Article'
-import { EArticleBlockType, EArticleType } from 'entities/Article/model/types/article'
+import { ArticleListItem } from './ArticleListItem'
+import { EArticleView, type IArticle } from '../../model/types/article'
 
 export default {
-    title: 'entities/Article/ArticleDetails',
-    component: ArticleDetails
-} as ComponentMeta<typeof ArticleDetails>
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem
+} as ComponentMeta<typeof ArticleListItem>
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />
 
-const article: IArticle = {
+const article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -21,13 +19,16 @@ const article: IArticle = {
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'Ulbi tv'
+        username: 'Ulbi tv',
+        avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg'
     },
-    type: [EArticleType.IT],
+    type: [
+        'IT'
+    ],
     blocks: [
         {
             id: '1',
-            type: EArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -37,12 +38,12 @@ const article: IArticle = {
         },
         {
             id: '4',
-            type: EArticleBlockType.CODE,
+            type: 'CODE',
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;'
         },
         {
             id: '5',
-            type: EArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -51,18 +52,18 @@ const article: IArticle = {
         },
         {
             id: '2',
-            type: EArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта'
         },
         {
             id: '3',
-            type: EArticleBlockType.CODE,
+            type: 'CODE',
             code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         },
         {
             id: '7',
-            type: EArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -71,41 +72,29 @@ const article: IArticle = {
         },
         {
             id: '8',
-            type: EArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта'
         },
         {
             id: '9',
-            type: EArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.'
             ]
         }
     ]
+} as IArticle
+
+export const Big = Template.bind({})
+Big.args = {
+    view: EArticleView.BIG,
+    article
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article
-    }
-})]
-
-export const Loading = Template.bind({})
-Loading.args = {}
-Loading.decorators = [StoreDecorator({
-    articleDetails: {
-        isLoading: true
-    }
-})]
-
-export const Error = Template.bind({})
-Error.args = {}
-Error.decorators = [StoreDecorator({
-    articleDetails: {
-        error: 'error'
-    }
-})]
+export const Small = Template.bind({})
+Small.args = {
+    view: EArticleView.SMALL,
+    article
+}

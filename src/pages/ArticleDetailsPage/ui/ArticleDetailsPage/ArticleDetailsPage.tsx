@@ -1,5 +1,5 @@
 import { type FC, memo, useCallback } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { classNames, useAppDispatch } from 'shared/lib'
 import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -11,11 +11,11 @@ import { articleDetailsCommentsReducer, getArticleComments } from '../../model/s
 import { useSelector } from 'react-redux'
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import {
-    fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { AddCommentForm } from 'features/addCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
+import { Button } from 'shared/ui'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface IArticleDetailsPageProps {
     className?: string
@@ -31,6 +31,11 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     const dispatch = useAppDispatch()
     const comments = useSelector(getArticleComments.selectAll)
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading)
+    const navigate = useNavigate()
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles)
+    }, [navigate])
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
@@ -51,6 +56,9 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <Button onClick={onBackToList}>
+                    {t('Назад к списку')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Комментарий')}/>
                 <AddCommentForm onSendComment = {onSendComment}/>
