@@ -1,3 +1,4 @@
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export { EArticleView } from './model/types/article'
 export type { IArticleDetailsSchema } from './model/types/articleDetailsSchema'
