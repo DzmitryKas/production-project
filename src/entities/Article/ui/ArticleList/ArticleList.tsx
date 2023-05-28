@@ -29,14 +29,6 @@ const ArticleList: FC<IArticleListProps> = memo(({
 }) => {
     const { t } = useTranslation()
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        )
-    }
-
     const renderArticle = (article: IArticle) => {
         return <ArticleListItem
             article={article}
@@ -49,6 +41,7 @@ const ArticleList: FC<IArticleListProps> = memo(({
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     )
 })

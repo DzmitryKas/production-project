@@ -8,9 +8,7 @@ const AppRouter = () => {
     const renderWithWrapper = useCallback((route: TAppRouteProps) => {
         const element = (
             <Suspense fallback={<PageLoader />}>
-                <div className="wrapper_page">
-                    {route.element}
-                </div>
+                {route.element}
             </Suspense>
         )
 

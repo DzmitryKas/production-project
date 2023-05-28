@@ -31,21 +31,21 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
+            <header className={classNames(cls.Navbar, {}, [className])}>
                 <Button theme={EButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         )
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={EButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
                 {t('Войти')}
             </Button>
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-        </div>
+        </header>
     )
 })
 

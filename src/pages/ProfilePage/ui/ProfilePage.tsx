@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect } from 'react'
+import { type FC, useCallback } from 'react'
 import { classNames, useAppDispatch } from 'shared/lib'
 import { DynamicModuleLoader, type TReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
@@ -21,6 +21,7 @@ import { EValidateProfileError } from 'entities/Profile/model/types/profile'
 import { useTranslation } from 'react-i18next'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
+import { Page } from 'shared/ui/Page/Page'
 
 const initialReducers: TReducersList = {
     profile: profileReducer
@@ -86,7 +87,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length && validateErrors.map(err =>
                     <Text
@@ -108,7 +109,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
                     onChangeCountry={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     )
