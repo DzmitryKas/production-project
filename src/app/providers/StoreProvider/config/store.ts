@@ -1,11 +1,10 @@
-import { type CombinedState, configureStore, type ReducersMapObject, type Reducer } from '@reduxjs/toolkit'
+import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 import { type IStateSchema, type IThunkExtraArg } from './stateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
 import { $api } from 'shared/api/api'
-import { type To } from '@remix-run/router'
-import { type NavigateOptions } from 'react-router/dist/lib/context'
+import { scrollSaveReducer } from 'features/ScrollSave'
 
 export function createReduxStore (
     initialState?: IStateSchema,
@@ -14,7 +13,8 @@ export function createReduxStore (
     const rootReducer: ReducersMapObject<IStateSchema> = {
         ...asyncReducer,
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        scrollSave: scrollSaveReducer
     }
 
     const reducerManager = createReducerManager(rootReducer)

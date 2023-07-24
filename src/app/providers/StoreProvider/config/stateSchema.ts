@@ -10,10 +10,12 @@ import { type IArticleDetailsSchema } from 'entities/Article'
 import { type IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type IAddCommentFormSchema } from 'features/addCommentForm'
 import { type IArticlesPageSchema } from 'pages/ArticlePage'
+import { type IScrollSaveSchema } from 'features/ScrollSave'
 
 export interface IStateSchema {
     counter: ICounterSchema
     user: IUserSchema
+    scrollSave: IScrollSaveSchema
 
     // Асинхронные редюсеры
     loginForm?: ILoginSchema

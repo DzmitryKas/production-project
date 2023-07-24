@@ -9,11 +9,10 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux'
 import {
     getArticlesPageError,
-    getArticlesPageInited,
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 

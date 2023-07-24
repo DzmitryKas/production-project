@@ -46,7 +46,8 @@ module.exports = {
         '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-invalid-void-type': 'warn'
+        '@typescript-eslint/no-invalid-void-type': 'warn',
+        'n/no-callback-literal': 'off'
     },
     globals: {
         __IS_DEV__: true,
