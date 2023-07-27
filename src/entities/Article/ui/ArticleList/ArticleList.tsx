@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { EArticleView, type IArticle } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { Text } from 'shared/ui'
+import { ETextSize } from 'shared/ui/Text/Text'
 
 interface IArticleListProps {
     className?: string
@@ -36,6 +38,15 @@ const ArticleList: FC<IArticleListProps> = memo(({
             className={cls.card}
             key={article.id}
         />
+    }
+
+    if (!isLoading && !articles.length) {
+        return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <Text
+                size={ETextSize.L}
+                title={t('Статьи не найдены')}
+            />
+        </div>
     }
 
     return (

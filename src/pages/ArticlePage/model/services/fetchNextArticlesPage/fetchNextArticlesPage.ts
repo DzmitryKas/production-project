@@ -21,9 +21,7 @@ IThunkConfig<string>>(
 
         if (hasMore && !isLoading) {
             dispatch(articlesPageActions.setPage(page + 1))
-            dispatch(fetchArticlesList({
-                page: page + 1
-            }))
+            dispatch(fetchArticlesList({}))
         }
     }
 )
