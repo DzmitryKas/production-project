@@ -1,9 +1,9 @@
-import { type FC, memo, useCallback } from 'react'
+import { type FC, type HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './ArticleListItem.module.scss'
 import { useTranslation } from 'react-i18next'
 import { EArticleBlockType, EArticleView, type IArticle, type IArticleTextBlock } from '../../model/types/article'
-import { Button, Card, EButtonTheme, Text } from 'shared/ui'
+import { AppLink, Button, Card, EButtonTheme, Text } from 'shared/ui'
 import { Icon } from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
@@ -15,12 +15,14 @@ interface IArticleListItemProps {
     className?: string
     article: IArticle
     view: EArticleView
+    target?: HTMLAttributeAnchorTarget
 }
 
 const ArticleListItem: FC<IArticleListItemProps> = memo(({
     className,
     article,
-    view
+    view,
+    target
 }) => {
     const { t } = useTranslation()
     const navigate = useNavigate()
@@ -57,9 +59,14 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     ) }
                     <div className={cls.footer}>
-                        <Button onClick={onOpenArticle} theme={EButtonTheme.OUTLINE}>
-                            {t('Читать далее...')}
-                        </Button>
+                        <AppLink
+                            target={target}
+                            to={RoutePath.article_details + article.id}
+                        >
+                            <Button theme={EButtonTheme.OUTLINE}>
+                                {t('Читать далее...')}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -68,8 +75,12 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-            <Card onClick={onOpenArticle} className={cls.card}>
+        <AppLink
+            target={target}
+            to={RoutePath.article_details + article.id}
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+        >
+            <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img className={cls.img} src={article.img} alt={article.title} />
                     <Text text={article.createdAt} className={cls.date} />
@@ -80,7 +91,7 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
                 </div>
                 <Text text={article.title} className={cls.title} />
             </Card>
-        </div>
+        </AppLink>
     )
 })
 

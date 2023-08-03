@@ -4,14 +4,14 @@ import { type IStateSchema } from 'app/providers/StoreProvider'
 import { type IArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentSchema'
 import {
     fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 
 const commentsAdapter = createEntityAdapter<IComment>({
     selectId: (comment) => comment.id
 })
 
 export const getArticleComments = commentsAdapter.getSelectors<IStateSchema>(
-    (state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+    (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 )
 
 const articleDetailsCommentsSlice = createSlice({

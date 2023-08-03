@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react'
+import { type FC, type HTMLAttributeAnchorTarget, memo } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './ArticleList.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -13,6 +13,7 @@ interface IArticleListProps {
     articles: IArticle[]
     isLoading?: boolean
     view?: EArticleView
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: EArticleView) => {
@@ -27,7 +28,8 @@ const ArticleList: FC<IArticleListProps> = memo(({
     className,
     view = EArticleView.SMALL,
     articles,
-    isLoading
+    isLoading,
+    target
 }) => {
     const { t } = useTranslation()
 
@@ -37,6 +39,7 @@ const ArticleList: FC<IArticleListProps> = memo(({
             view={view}
             className={cls.card}
             key={article.id}
+            target={target}
         />
     }
 

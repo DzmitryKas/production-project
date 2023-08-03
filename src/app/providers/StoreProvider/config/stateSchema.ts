@@ -7,7 +7,11 @@ import { type AxiosInstance } from 'axios'
 import { type To } from '@remix-run/router'
 import { type NavigateOptions } from 'react-router/dist/lib/context'
 import { type IArticleDetailsSchema } from 'entities/Article'
-import { type IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import {
+    type IArticleDetailsCommentsSchema,
+    type IArticleDetailsPageSchema,
+    type IArticleDetailsRecommendationSchema
+} from 'pages/ArticleDetailsPage'
 import { type IAddCommentFormSchema } from 'features/addCommentForm'
 import { type IArticlesPageSchema } from 'pages/ArticlePage'
 import { type IScrollSaveSchema } from 'features/ScrollSave'
@@ -21,9 +25,9 @@ export interface IStateSchema {
     loginForm?: ILoginSchema
     profile?: IProfileSchema
     articleDetails?: IArticleDetailsSchema
-    articleDetailsComments?: IArticleDetailsCommentsSchema
     addCommentForm?: IAddCommentFormSchema
     articlesPage?: IArticlesPageSchema
+    articleDetailsPage?: IArticleDetailsPageSchema
 
 }
 
