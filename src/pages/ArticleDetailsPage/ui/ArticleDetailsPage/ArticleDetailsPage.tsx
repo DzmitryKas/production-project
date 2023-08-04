@@ -1,5 +1,5 @@
 import { type FC, memo, useCallback } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { classNames, useAppDispatch } from 'shared/lib'
 import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -14,13 +14,12 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { AddCommentForm } from 'features/addCommentForm'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { Button } from 'shared/ui'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { Page } from 'widgets/Page/Page'
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationSlice'
 import { getArticleDetailsRecommendationsIsLoading } from '../../model/selectors/recommendations'
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticlerecommendations'
 import { articleDetailsPageReducer } from '../../model/slices'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 interface IArticleDetailsPageProps {
     className?: string
@@ -38,11 +37,6 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     const recommendations = useSelector(getArticleRecommendations.selectAll)
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading)
     const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading)
-    const navigate = useNavigate()
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
-    }, [navigate])
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
@@ -64,9 +58,7 @@ const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text size={ETextSize.L} className={cls.commentTitle} title={t('Рекомендуем')}/>
                 <ArticleList

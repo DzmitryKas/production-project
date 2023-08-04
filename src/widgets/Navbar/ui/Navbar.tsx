@@ -1,11 +1,13 @@
 import { type FC, memo, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import { Button, EButtonTheme } from 'shared/ui'
+import { AppLink, Button, EButtonTheme, ETextTheme, Text } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername/ui/LoginModal/LoginModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { EAppLinkTheme } from 'shared/ui/AppLink/AppLink'
 
 interface INavbarProps {
     className?: string
@@ -32,7 +34,23 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Button theme={EButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
+                <Text
+                    className={cls.appName}
+                    title={t('Ulbi TV App')}
+                    theme={ETextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={EAppLinkTheme.SECONDARY}
+                    className={cls.createBtn}
+                >
+                    {t('Создать статью')}
+                </AppLink>
+                <Button
+                    className={cls.links}
+                    theme={EButtonTheme.CLEAR_INVERTED}
+                    onClick={onLogout}
+                >
                     {t('Выйти')}
                 </Button>
             </header>

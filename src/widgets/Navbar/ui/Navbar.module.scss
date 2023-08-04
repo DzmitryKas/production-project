@@ -5,7 +5,6 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    justify-content: flex-end;
 }
 
 .links {
@@ -14,4 +13,9 @@
 
 .mainLink {
     margin-right: 15px;
+}
+
+.appName {
+    width: var(--sidebar-width);
+    margin-left: 15px;
 }

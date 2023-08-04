@@ -5,6 +5,7 @@ import { NotFoundPage } from 'pages/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
 import { ArticlesPage } from 'pages/ArticlePage'
 import ArticleDetailsPage from 'pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage'
+import { ArticleEditPage } from 'pages/ArticleEditPage'
 
 export type TAppRouteProps = RouteProps & {
     authOnly?: boolean
@@ -16,6 +17,8 @@ export enum EAppRoutes {
     PROFILE = 'profile',
     ARTICLES = 'articles',
     ARTICLE_DETAILS = 'article_details',
+    ARTICLE_CREATE = 'article_create',
+    ARTICLE_EDIT = 'article_edit',
     // last
     NOT_FOUND = 'not_found'
 }
@@ -26,6 +29,8 @@ export const RoutePath: Record<EAppRoutes, string> = {
     [EAppRoutes.PROFILE]: '/profile/',
     [EAppRoutes.ARTICLES]: '/articles',
     [EAppRoutes.ARTICLE_DETAILS]: '/articles/',
+    [EAppRoutes.ARTICLE_CREATE]: '/articles/new',
+    [EAppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
     // last
     [EAppRoutes.NOT_FOUND]: '*'
 }
@@ -52,6 +57,16 @@ export const routeConfig: Record<EAppRoutes, TAppRouteProps> = {
     [EAppRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePath.article_details}:id`,
         element: <ArticleDetailsPage />,
+        authOnly: true
+    },
+    [EAppRoutes.ARTICLE_CREATE]: {
+        path: `${RoutePath.article_create}`,
+        element: <ArticleEditPage />,
+        authOnly: true
+    },
+    [EAppRoutes.ARTICLE_EDIT]: {
+        path: `${RoutePath.article_edit}`,
+        element: <ArticleEditPage />,
         authOnly: true
     },
     // last
