@@ -59,7 +59,11 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme={EButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+            <Button
+                className={cls.links}
+                theme={EButtonTheme.CLEAR_INVERTED}
+                onClick={onShowModal}
+            >
                 {t('Войти')}
             </Button>
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
