@@ -17,7 +17,8 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'dzmitry-kas-plugin'
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -47,7 +48,8 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-invalid-void-type': 'warn',
-        'n/no-callback-literal': 'off'
+        'n/no-callback-literal': 'off',
+        'dzmitry-kas-plugin/path-checker': 'error'
     },
     globals: {
         __IS_DEV__: true,

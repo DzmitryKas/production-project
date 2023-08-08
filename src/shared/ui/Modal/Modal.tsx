@@ -1,7 +1,7 @@
 import React, { useState, type FC, type ReactNode, useRef, useEffect, useCallback, type MutableRefObject } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './Modal.module.scss'
-import { Portal } from 'shared/ui'
+import { Portal } from '../Portal/Portal'
 import { type TMods } from 'shared/lib/classNames/classNames'
 
 interface IModalProps {
