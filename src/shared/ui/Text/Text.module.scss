@@ -38,7 +38,7 @@
     text-align: center;
 }
 
-.siZe_m {
+.size_m {
     .title {
         font: var(--font-l);
     }
@@ -48,12 +48,22 @@
     }
 }
 
-.siZe_l {
+.size_l {
     .title {
         font: var(--font-xl);
     }
 
     .text {
         font: var(--font-l);
+    }
+}
+
+.size_s {
+    .title {
+        font: var(--font-m);
+    }
+
+    .text {
+        font: var(--font-s);
     }
 }

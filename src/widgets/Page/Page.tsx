@@ -40,14 +40,14 @@ const Page: FC<IPageProps> = memo(({ className, children, onScrollEnd }) => {
     })
 
     return (
-        <section
+        <main
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-        </section>
+        </main>
     )
 })
 

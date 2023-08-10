@@ -23,7 +23,7 @@ const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
     }
 
     return (
-        <menu
+        <aside
             data-testid='sidebar'
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
@@ -37,7 +37,7 @@ const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <VStack gap={'8'} className={cls.items}>
+            <VStack role={'navigation'} gap={'8'} className={cls.items}>
                 {sidebarItemsList.map((item) => (
                     <SidebarItem
                         item={item}
@@ -50,7 +50,7 @@ const Sidebar: FC<ISidebarProps> = memo(({ className }) => {
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} className={cls.lang}/>
             </div>
-        </menu>
+        </aside>
     )
 })
 
