@@ -43,7 +43,7 @@ const CountrySelect: FC<ICountrySelectProps> = memo(({
             value={value} items={options}
             onChange={onChangeHandler}
             readonly={readonly}
-            direction={'top'}
+            direction={'top right'}
         />
     )
 })
