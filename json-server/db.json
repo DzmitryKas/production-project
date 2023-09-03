@@ -553,6 +553,12 @@
       "userId": "2",
       "text": "fhjfhj",
       "id": "nlFZmwO"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "rtygdhd",
+      "id": "YiXXEVY"
     }
   ],
   "users": [
@@ -578,7 +584,7 @@
       "lastname": "Ульби",
       "age": 345,
       "currency": "RUB",
-      "country": "Russia",
+      "country": "Belarus",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://yt3.googleusercontent.com/ytc/AGIKgqMD6XXncBPhVEtWuOnLlHw2WXg8audkRa6rJBKucw=s900-c-k-c0x00ffffff-no-rj"

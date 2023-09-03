@@ -1,17 +1,20 @@
-import { type FC, useCallback } from 'react'
+import { type FC, memo, useCallback } from 'react'
 import { classNames, useAppDispatch } from 'shared/lib'
 import { useTranslation } from 'react-i18next'
 import { Button, EButtonTheme, Text } from 'shared/ui'
-import { useSelector } from 'react-redux'
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
-import { getUserAuthData } from 'entities/User'
 import { HStack } from 'shared/ui/Stack'
+import { useSelector } from 'react-redux'
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
+import { getUserAuthData } from 'entities/User'
+import { profileActions } from '../../model/slice/profileSlice'
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData'
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 
-interface IProfilePageHeaderProps {
+interface IEditableProfileHeaderProps {
     className?: string
 }
 
-const ProfilePageHeader: FC<IProfilePageHeaderProps> = ({ className }) => {
+const EditableProfileHeader: FC<IEditableProfileHeaderProps> = memo(({ className }) => {
     const { t } = useTranslation('profile')
 
     const readonly = useSelector(getProfileReadonly)
@@ -55,6 +58,6 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = ({ className }) => {
             )}
         </HStack>
     )
-}
+})
 
-export { ProfilePageHeader }
+export { EditableProfileHeader }

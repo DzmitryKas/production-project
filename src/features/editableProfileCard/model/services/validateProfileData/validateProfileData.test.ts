@@ -1,7 +1,7 @@
 import { validateProfileData } from './validateProfileData'
 import { ECountry } from 'entities/Country'
 import { ECurrency } from 'entities/Currency'
-import { EValidateProfileError } from '../../types/profile'
+import { EValidateProfileError } from '../../types/editableProfileCardSchema'
 
 const data = {
     username: 'admin',
