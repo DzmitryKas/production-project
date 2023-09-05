@@ -27,6 +27,8 @@ interface ITextProps {
     theme?: ETextTheme
     align?: ETextAlign
     size?: ETextSize
+
+    'data-testid'?: string
 }
 
 type THeaderTag = 'h1' | 'h2' | 'h3'
@@ -43,13 +45,28 @@ const Text: FC<ITextProps> = memo(({
     text,
     theme = ETextTheme.PRIMARY,
     align = ETextAlign.LEFT,
-    size = ETextSize.M
+    size = ETextSize.M,
+    'data-testid': dataTestId = 'Text'
 }) => {
     const HeaderTag = mapSizeToHeaderTag[size]
     return (
         <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
-            {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-            {text && <p className={cls.text}>{text}</p>}
+            {title &&
+                <HeaderTag
+                    className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                >
+                    {title}
+                </HeaderTag>
+            }
+            {text &&
+                <p
+                    className={cls.text}
+                    data-testid={`${dataTestId}.Paragraph`}
+                >
+                    {text}
+                </p>
+            }
         </div>
     )
 })
