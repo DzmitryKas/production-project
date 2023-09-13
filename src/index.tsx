@@ -1,4 +1,3 @@
-import { render } from 'react-dom'
 import './app/styles/index.scss'
 import App from './app/App'
 import { BrowserRouter } from 'react-router-dom'
@@ -8,7 +7,14 @@ import { StoreProvider } from 'app/providers/StoreProvider'
 
 import 'shared/config/i18n/i18n'
 
-render(
+import { createRoot } from 'react-dom/client'
+
+const container = document.getElementById('root')
+if (!container) {
+    throw new Error('Контейнер root не найден.')
+}
+const root = createRoot(container)
+root.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
@@ -17,8 +23,5 @@ render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>,
-
-    document.getElementById('root')
-
+    </BrowserRouter>
 )

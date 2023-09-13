@@ -46,8 +46,7 @@ const ArticleTypeTabs: FC<IArticleTypeTabsProps> = memo(({
             value={value}
             onTabClick={onTabClick}
             tabs={typeTabs}
-        >
-        </Tabs>
+        />
     )
 })
 
