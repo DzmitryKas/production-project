@@ -3,7 +3,7 @@ import { ECountry } from 'entities/Country'
 import { ECurrency } from 'entities/Currency'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { type IProfileSchema } from '../types/editableProfileCardSchema'
-import { EValidateProfileError } from '../../consts/consts'
+import { EValidateProfileError } from '../consts/consts'
 
 const data = {
     username: 'admin',
