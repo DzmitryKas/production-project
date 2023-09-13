@@ -1,5 +1,5 @@
 import { type IProfile } from '../../../../../entities/Profile/model/types/profile'
-import { EValidateProfileError } from '../../types/editableProfileCardSchema'
+import { EValidateProfileError } from '../../consts/consts'
 
 export const validateProfileData = (profile?: IProfile) => {
     if (!profile) {

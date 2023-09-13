@@ -2,7 +2,8 @@ import { profileActions, profileReducer } from './profileSlice'
 import { ECountry } from 'entities/Country'
 import { ECurrency } from 'entities/Currency'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { EValidateProfileError, type IProfileSchema } from '../types/editableProfileCardSchema'
+import { type IProfileSchema } from '../types/editableProfileCardSchema'
+import { EValidateProfileError } from '../../consts/consts'
 
 const data = {
     username: 'admin',

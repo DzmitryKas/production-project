@@ -2,7 +2,7 @@ import { type FC, type HTMLAttributeAnchorTarget, memo, useCallback } from 'reac
 import { classNames } from 'shared/lib'
 import cls from './ArticleListItem.module.scss'
 import { useTranslation } from 'react-i18next'
-import { EArticleBlockType, EArticleView, type IArticle, type IArticleTextBlock } from '../../model/types/article'
+import { type IArticle, type IArticleTextBlock } from '../../model/types/article'
 import { AppLink, Button, Card, EButtonTheme, Text } from 'shared/ui'
 import { Icon } from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye.svg'
@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useNavigate } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { EArticleBlockType, EArticleView } from '../../model/consts/consts'
 
 interface IArticleListItemProps {
     className?: string

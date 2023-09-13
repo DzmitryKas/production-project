@@ -1,6 +1,6 @@
 import { type IStateSchema } from 'app/providers/StoreProvider'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
-import { EValidateProfileError } from '../../types/editableProfileCardSchema'
+import { EValidateProfileError } from '../../consts/consts'
 
 describe('getProfileForm.test', () => {
     test('should return validateErrors', () => {

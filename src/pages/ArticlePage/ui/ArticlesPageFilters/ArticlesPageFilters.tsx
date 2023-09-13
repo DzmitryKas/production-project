@@ -2,7 +2,13 @@ import { type FC, memo, useCallback } from 'react'
 import { classNames, useAppDispatch } from 'shared/lib'
 import cls from './ArticlesPageFilters.module.scss'
 import { useTranslation } from 'react-i18next'
-import { ArticleTypeTabs, ArticleViewSelector, type EArticleSortField, type EArticleView } from 'entities/Article'
+import {
+    ArticleTypeTabs,
+    ArticleViewSelector,
+    type EArticleSortField,
+    type EArticleType,
+    type EArticleView
+} from 'entities/Article'
 import { useSelector } from 'react-redux'
 import {
     getArticlesPageOrder,
@@ -17,7 +23,6 @@ import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/Art
 import { type TSortOrder } from 'shared/types'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { type EArticleType } from 'entities/Article/model/types/article'
 
 interface IArticlesPageFiltersProps {
     className?: string

@@ -9,8 +9,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { type TMods } from 'shared/lib/classNames/classNames'
 import { type ECurrency } from 'entities/Currency'
 import { CurrencySelect } from 'entities/Currency'
-import { type ECountry } from 'entities/Country/model/types/country'
-import { CountrySelect } from 'entities/Country'
+import { CountrySelect, type ECountry } from 'entities/Country'
 import { HStack, VStack } from 'shared/ui/Stack'
 
 interface IProfileCardProps {

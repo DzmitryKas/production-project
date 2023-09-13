@@ -17,11 +17,12 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import DateIcon from 'shared/assets/icons/date.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { EArticleBlockType, type TArticleBlock } from '../../model/types/article'
+import { type TArticleBlock } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { EArticleBlockType } from '../../model/consts/consts'
 
 interface IArticleDetailsProps {
     className?: string

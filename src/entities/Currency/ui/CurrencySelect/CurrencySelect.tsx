@@ -1,9 +1,7 @@
 import { type FC, memo, useCallback } from 'react'
-import { classNames } from 'shared/lib'
 import { useTranslation } from 'react-i18next'
-import { Select } from 'shared/ui/Select/Select'
-import { ECurrency } from '../../model/types/currency'
 import { ListBox } from 'shared/ui/ListBox/ListBox'
+import { ECurrency } from '../../model/consts/consts'
 
 interface ICurrencySelectProps {
     className?: string

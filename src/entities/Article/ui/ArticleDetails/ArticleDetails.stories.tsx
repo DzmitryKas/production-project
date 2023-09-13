@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ArticleDetails } from './ArticleDetails'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { type IArticle } from '../../model/types/article'
-import { EArticleBlockType, EArticleType } from '../../model/types/article'
+import { EArticleBlockType, EArticleType } from '../../model/consts/consts'
 
 export default {
     title: 'entities/Article/ArticleDetails',
