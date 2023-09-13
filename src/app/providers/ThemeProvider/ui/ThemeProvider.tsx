@@ -1,6 +1,6 @@
-import React, { type FC, type ReactNode, useMemo, useState } from 'react'
+import React, { type ReactNode, useMemo, useState } from 'react'
 import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/ThemeContext'
-import { ETheme } from 'app/providers/ThemeProvider'
+import { ETheme } from '../consts/consts'
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ETheme || ETheme.LIGHT
 
