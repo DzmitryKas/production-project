@@ -5,11 +5,12 @@ import cls from './Icon.module.scss'
 interface IIconProps {
     className?: string
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>
+    inverted?: boolean
 }
 
-const Icon: FC<IIconProps> = memo(({ className, Svg }) => {
+const Icon: FC<IIconProps> = memo(({ className, Svg, inverted }) => {
     return (
-        <Svg className={classNames(cls.Icon, {}, [className])} />
+        <Svg className={classNames(cls.Icon, { [cls.inverted]: inverted }, [className])} />
     )
 })
 
