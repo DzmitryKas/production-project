@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib'
 import cls from './Modal.module.scss'
 import { Portal } from '../Portal/Portal'
 import { type TMods } from 'shared/lib/classNames/classNames'
+import { Overlay } from '../Overlay/Overlay'
 
 interface IModalProps {
     className?: string
@@ -35,10 +36,6 @@ const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose, lazy }) 
         }
     }, [onClose])
 
-    const contentHandler = (e: React.MouseEvent) => {
-        e.stopPropagation()
-    }
-
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') closeHandler()
     }, [closeHandler])
@@ -65,10 +62,9 @@ const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose, lazy }) 
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={contentHandler}>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
