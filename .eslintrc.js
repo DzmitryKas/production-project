@@ -48,6 +48,7 @@ module.exports = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-invalid-void-type': 'warn',
+        '@typescript-eslint/consistent-type-imports': 'warn',
         'n/no-callback-literal': 'off',
         'dzmitry-kas-plugin/path-checker': 'error'
     },
