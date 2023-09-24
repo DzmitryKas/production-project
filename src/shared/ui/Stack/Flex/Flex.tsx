@@ -1,7 +1,7 @@
 import { type ReactNode, type FC, type HTMLAttributes, type DetailedHTMLProps } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Flex.module.scss'
-import { type TMods } from 'shared/lib/classNames/classNames'
+import { type TMods } from '@/shared/lib/classNames/classNames'
 
 export type TFlexJustify = TFlexAlign | 'between'
 export type TFlexAlign = 'start' | 'center' | 'end'

@@ -1,6 +1,6 @@
 import { type FC, Suspense } from 'react'
-import { classNames } from 'shared/lib'
-import { Loader, Modal } from 'shared/ui'
+import { classNames } from '@/shared/lib'
+import { Loader, Modal } from '@/shared/ui'
 import { LoginFormLazy } from '../LoginForm/LoginFormLazy'
 
 interface ILoginModalProps {

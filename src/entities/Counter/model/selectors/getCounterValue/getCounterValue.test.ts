@@ -1,5 +1,5 @@
 import { getCounterValue } from './getCounterValue'
-import { type IStateSchema } from 'app/providers/StoreProvider'
+import { type IStateSchema } from '@/app/providers/StoreProvider'
 
 describe('getCounterValue.test', () => {
     const state: DeepPartial<IStateSchema> = {

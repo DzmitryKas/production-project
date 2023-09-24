@@ -1,4 +1,4 @@
-import { type IStateSchema } from 'app/providers/StoreProvider'
+import { type IStateSchema } from '@/app/providers/StoreProvider'
 import { getProfileIsLoading } from './getProfileIsLoading'
 
 describe('getProfileForm.test', () => {

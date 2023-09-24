@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Button, EButtonTheme } from 'shared/ui'
+import { Button, EButtonTheme } from '@/shared/ui'
 
 interface ILangSwitcherProps {
     className?: string

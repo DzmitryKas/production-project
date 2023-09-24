@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import { useTranslation } from 'react-i18next'
 
 // компонент для тестирования

@@ -1,7 +1,7 @@
-import { type IStateSchema } from 'app/providers/StoreProvider'
+import { type IStateSchema } from '@/app/providers/StoreProvider'
 import { getProfileForm } from './getProfileForm'
-import { ECountry } from 'entities/Country'
-import { ECurrency } from 'entities/Currency'
+import { ECountry } from '@/entities/Country'
+import { ECurrency } from '@/entities/Currency'
 
 describe('getProfileForm.test', () => {
     test('should return form', () => {

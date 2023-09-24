@@ -1,4 +1,4 @@
-import { type IUser } from 'entities/User'
+import { type IUser } from '@/entities/User'
 
 export interface IComment {
     id: string

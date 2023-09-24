@@ -1,11 +1,11 @@
 import { type FC, memo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './NotificationList.module.scss'
 import { useTranslation } from 'react-i18next'
 import { useNotifications } from '../../api/notificationApi'
-import { VStack } from 'shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 
 interface INotificationListProps {
     className?: string

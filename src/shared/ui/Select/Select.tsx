@@ -1,7 +1,7 @@
 import { type ChangeEvent, type FC, memo, useMemo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Select.module.scss'
-import { type TMods } from 'shared/lib/classNames/classNames'
+import { type TMods } from '@/shared/lib/classNames/classNames'
 
 export interface ISelectOption {
     value: string

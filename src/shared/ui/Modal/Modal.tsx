@@ -1,8 +1,8 @@
 import React, { type FC, type ReactNode } from 'react'
-import { classNames, useModal } from 'shared/lib'
+import { classNames, useModal } from '@/shared/lib'
 import cls from './Modal.module.scss'
 import { Portal } from '../Portal/Portal'
-import { type TMods } from 'shared/lib/classNames/classNames'
+import { type TMods } from '@/shared/lib/classNames/classNames'
 import { Overlay } from '../Overlay/Overlay'
 
 interface IModalProps {

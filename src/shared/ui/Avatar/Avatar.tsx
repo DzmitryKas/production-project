@@ -1,7 +1,7 @@
 import { type CSSProperties, type FC, useMemo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Avatar.module.scss'
-import { type TMods } from 'shared/lib/classNames/classNames'
+import { type TMods } from '@/shared/lib/classNames/classNames'
 
 interface IAvatarProps {
     className?: string

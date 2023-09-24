@@ -1,4 +1,4 @@
-import { type IStateSchema } from 'app/providers/StoreProvider'
+import { type IStateSchema } from '@/app/providers/StoreProvider'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
 import { EValidateProfileError } from '../../consts/consts'
 

@@ -1,11 +1,11 @@
 import { type FC, memo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './ArticleViewSelector.module.scss'
 import { useTranslation } from 'react-i18next'
-import ListIcon from 'shared/assets/icons/list.svg'
-import TiledIcon from 'shared/assets/icons/tiled.svg'
-import { Button, EButtonTheme } from 'shared/ui'
-import { Icon } from 'shared/ui/Icon/Icon'
+import ListIcon from '@/shared/assets/icons/list.svg'
+import TiledIcon from '@/shared/assets/icons/tiled.svg'
+import { Button, EButtonTheme } from '@/shared/ui'
+import { Icon } from '@/shared/ui/Icon/Icon'
 import { EArticleView } from '../../model/consts/consts'
 
 interface IArticleViewSelectorProps {

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type IThunkConfig } from 'app/providers/StoreProvider'
+import { type IThunkConfig } from '@/app/providers/StoreProvider'
 import { type IArticle } from '../../types/article'
 
 export const fetchArticleById = createAsyncThunk<IArticle, string | undefined, IThunkConfig<string>>(

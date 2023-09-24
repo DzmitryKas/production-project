@@ -1,9 +1,9 @@
 import { type FC, memo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './ArticleTextBlockComponent.module.scss'
 import { useTranslation } from 'react-i18next'
 import { type IArticleTextBlock } from '../../model/types/article'
-import { Text } from 'shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface IArticleTextBlockComponentProps {
     className?: string

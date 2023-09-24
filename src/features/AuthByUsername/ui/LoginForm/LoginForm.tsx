@@ -1,8 +1,8 @@
 import { type FC, memo, useCallback } from 'react'
-import { classNames, useAppDispatch } from 'shared/lib'
+import { classNames, useAppDispatch } from '@/shared/lib'
 import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Button, EButtonTheme, Input, ETextTheme, Text } from 'shared/ui'
+import { Button, EButtonTheme, Input, ETextTheme, Text } from '@/shared/ui'
 import { useSelector } from 'react-redux'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
@@ -10,7 +10,7 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
-import { DynamicModuleLoader, type TReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, type TReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 export interface ILoginFormProps {
     className?: string

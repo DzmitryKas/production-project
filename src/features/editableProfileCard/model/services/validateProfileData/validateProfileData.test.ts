@@ -1,6 +1,6 @@
 import { validateProfileData } from './validateProfileData'
-import { ECountry } from 'entities/Country'
-import { ECurrency } from 'entities/Currency'
+import { ECountry } from '@/entities/Country'
+import { ECurrency } from '@/entities/Currency'
 import { EValidateProfileError } from '../../consts/consts'
 
 const data = {

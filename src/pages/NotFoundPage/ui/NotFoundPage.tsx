@@ -1,8 +1,8 @@
 import { type FC } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './NotFoundPage.module.scss'
 import { useTranslation } from 'react-i18next'
-import { Page } from 'widgets/Page/Page'
+import { Page } from '@/widgets/Page/Page'
 
 interface INotFoundPageProps {
     className?: string

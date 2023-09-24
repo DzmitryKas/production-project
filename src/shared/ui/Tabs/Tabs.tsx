@@ -1,5 +1,5 @@
 import { type FC, memo, type ReactNode, useCallback } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Tabs.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Card, ECardTheme } from '../Card/Card'

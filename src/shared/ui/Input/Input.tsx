@@ -1,7 +1,7 @@
 import React, { memo, type ButtonHTMLAttributes, type FC, useState, useEffect, useRef } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Input.module.scss'
-import { type TMods } from 'shared/lib/classNames/classNames'
+import { type TMods } from '@/shared/lib/classNames/classNames'
 
 type HTMLInputProps = Omit<ButtonHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 

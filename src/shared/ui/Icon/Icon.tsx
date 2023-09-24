@@ -1,5 +1,5 @@
 import React, { type FC, memo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './Icon.module.scss'
 
 interface IIconProps {

@@ -1,21 +1,21 @@
-import { type ICounterSchema } from 'entities/Counter'
-import { type IUserSchema } from 'entities/User'
-import { type ILoginSchema } from 'features/AuthByUsername'
+import { type ICounterSchema } from '@/entities/Counter'
+import { type IUserSchema } from '@/entities/User'
+import { type ILoginSchema } from '@/features/AuthByUsername'
 import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
 import { type To } from '@remix-run/router'
 import { type NavigateOptions } from 'react-router/dist/lib/context'
-import { type IArticleDetailsSchema } from 'entities/Article'
+import { type IArticleDetailsSchema } from '@/entities/Article'
 import {
     type IArticleDetailsCommentsSchema,
     type IArticleDetailsPageSchema,
     type IArticleDetailsRecommendationSchema
-} from 'pages/ArticleDetailsPage'
-import { type IAddCommentFormSchema } from 'features/addCommentForm'
-import { type IArticlesPageSchema } from 'pages/ArticlePage'
-import { type IScrollSaveSchema } from 'features/ScrollSave'
-import { type rtkApi } from 'shared/api/rtkApi'
-import { type IProfileSchema } from 'features/editableProfileCard'
+} from '@/pages/ArticleDetailsPage'
+import { type IAddCommentFormSchema } from '@/features/addCommentForm'
+import { type IArticlesPageSchema } from '@/pages/ArticlePage'
+import { type IScrollSaveSchema } from '@/features/ScrollSave'
+import { type rtkApi } from '@/shared/api/rtkApi'
+import { type IProfileSchema } from '@/features/editableProfileCard'
 
 export interface IStateSchema {
     counter: ICounterSchema

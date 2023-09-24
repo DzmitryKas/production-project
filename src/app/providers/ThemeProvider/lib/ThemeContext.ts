@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { type ETheme } from 'app/providers/ThemeProvider/consts/consts'
+import { type ETheme } from '@/app/providers/ThemeProvider/consts/consts'
 
 export interface ThemeContextProps {
     theme?: ETheme

@@ -1,19 +1,19 @@
 import { type FC, memo, Suspense, useCallback } from 'react'
-import { classNames, useAppDispatch } from 'shared/lib'
+import { classNames, useAppDispatch } from '@/shared/lib'
 import { useTranslation } from 'react-i18next'
-import { Loader, Text } from 'shared/ui'
-import { ETextSize } from 'shared/ui/Text/Text'
-import { AddCommentForm } from 'features/addCommentForm'
-import { CommentList } from 'entities/Comment'
+import { Loader, Text } from '@/shared/ui'
+import { ETextSize } from '@/shared/ui/Text/Text'
+import { AddCommentForm } from '@/features/addCommentForm'
+import { CommentList } from '@/entities/Comment'
 import { useSelector } from 'react-redux'
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { VStack } from 'shared/ui/Stack'
+import { VStack } from '@/shared/ui/Stack'
 
 interface IArticleDetailsCommentsProps {
     className?: string

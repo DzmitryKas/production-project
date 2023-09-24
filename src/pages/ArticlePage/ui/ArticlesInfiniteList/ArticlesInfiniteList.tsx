@@ -1,5 +1,5 @@
 import { type FC, memo } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from '@/shared/lib'
 import cls from './ArticlesInfiniteList.module.scss'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -9,8 +9,8 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { ArticleList } from 'entities/Article'
-import { Text } from 'shared/ui'
+import { ArticleList } from '@/entities/Article'
+import { Text } from '@/shared/ui'
 
 interface IArticlesInfiniteListProps {
     className?: string

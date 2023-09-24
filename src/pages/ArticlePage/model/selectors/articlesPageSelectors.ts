@@ -1,5 +1,5 @@
-import { type IStateSchema } from 'app/providers/StoreProvider'
-import { EArticleSortField, EArticleType, EArticleView } from 'entities/Article'
+import { type IStateSchema } from '@/app/providers/StoreProvider'
+import { EArticleSortField, EArticleType, EArticleView } from '@/entities/Article'
 
 export const getArticlesPageIsLoading = (state: IStateSchema) => state.articlesPage?.isLoading || false
 export const getArticlesPageError = (state: IStateSchema) => state.articlesPage?.error
