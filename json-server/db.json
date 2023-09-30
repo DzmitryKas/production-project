@@ -594,21 +594,27 @@
       "username": "admin",
       "password": "123",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
-      "roles": ["ADMIN"]
+      "roles": [
+        "ADMIN"
+      ]
     },
     {
       "id": "2",
       "username": "dzmitry",
       "password": "123",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
-      "roles": ["USER"]
+      "roles": [
+        "USER"
+      ]
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
-      "roles": ["MANAGER"]
+      "roles": [
+        "MANAGER"
+      ]
     }
   ],
   "profile": [
@@ -633,6 +639,36 @@
       "city": "Minsk",
       "username": "dzmitry",
       "avatar": "https://media.licdn.com/dms/image/C4D03AQHOEQfQi417lA/profile-displayphoto-shrink_800_800/0/1568182302920?e=2147483647&v=beta&t=T_BN5OGQCsZc5wdysrHHqp9aZSX2AF1bdzJud3Z-dAY"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "VAf5yzi"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "X24fkhN"
     }
   ]
 }
