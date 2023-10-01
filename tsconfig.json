@@ -29,6 +29,7 @@
     "./config/**/*.ts",
     ".eslintrc.js",
     "./webpack.config.ts",
-
+    "./vite.config.ts",
+    "./scripts/updateImports.ts",
   ]
 }

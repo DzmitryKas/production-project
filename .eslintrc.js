@@ -50,7 +50,8 @@ module.exports = {
         '@typescript-eslint/no-invalid-void-type': 'warn',
         '@typescript-eslint/consistent-type-imports': 'warn',
         'n/no-callback-literal': 'off',
-        'dzmitry-kas-plugin/path-checker': ['error', { alias: '@' }]
+        'dzmitry-kas-plugin/path-checker': ['error', { alias: '@' }],
+        'dzmitry-kas-plugin/public-api-imports': ['error', { alias: '@' }]
     },
     globals: {
         __IS_DEV__: true,

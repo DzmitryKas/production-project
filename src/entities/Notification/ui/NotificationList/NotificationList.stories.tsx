@@ -2,7 +2,6 @@ import React from 'react'
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { NotificationList } from './NotificationList'
 import withMock from 'storybook-addon-mock'
-import { WithoutRate } from '@/features/articleRating/ui/ArticleRating/ArticleRating.stories'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
