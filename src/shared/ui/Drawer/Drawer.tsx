@@ -3,7 +3,7 @@ import React, {
     memo, type ReactNode, useCallback, useEffect
 } from 'react'
 import { useTheme } from '@/app/providers/ThemeProvider'
-import {AnimationProvider, useAnimationLibs} from '../../lib/components/AnimationProvider'
+import { AnimationProvider, useAnimationLibs } from '../../lib/components/AnimationProvider'
 import { Overlay } from '../Overlay/Overlay'
 import cls from './Drawer.module.scss'
 import { Portal } from '../Portal/Portal'
@@ -107,7 +107,6 @@ const DrawerAsync = (props: IDrawerProps) => {
 }
 
 export const Drawer = memo((props: IDrawerProps) => {
-
     return (
         <AnimationProvider>
             <DrawerAsync {...props} />
