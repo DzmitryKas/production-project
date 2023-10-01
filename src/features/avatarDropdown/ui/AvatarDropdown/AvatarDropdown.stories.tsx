@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { AvatarDropdown } from './AvatarDropdown'
 
 export default {
-    title: 'shared/AvatarDropdown',
+    title: 'features/avatarDropdown/AvatarDropdown',
     component: AvatarDropdown
 } as ComponentMeta<typeof AvatarDropdown>
 
