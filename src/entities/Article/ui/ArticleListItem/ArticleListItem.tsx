@@ -9,8 +9,8 @@ import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useNavigate } from 'react-router-dom'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { EArticleBlockType, EArticleView } from '../../model/consts/consts'
+import { RoutePath } from '@/shared/const/router'
 
 interface IArticleListItemProps {
     className?: string

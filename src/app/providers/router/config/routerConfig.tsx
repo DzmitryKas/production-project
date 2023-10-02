@@ -1,7 +1,5 @@
-import { type RouteProps } from 'react-router-dom'
-import { AboutPage } from '@/pages/AboutPage'
 import { MainPage } from '@/pages/MainPage'
-import { NotFoundPage } from '@/pages/NotFoundPage'
+import { AboutPage } from '@/pages/AboutPage'
 import { ProfilePage } from '@/pages/ProfilePage'
 import { ArticlesPage } from '@/pages/ArticlePage'
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage'
@@ -9,39 +7,9 @@ import { ArticleEditPage } from '@/pages/ArticleEditPage'
 import { AdminPanelPage } from '@/pages/AdminPanelPage'
 import { EUserRole } from '@/entities/User'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
-
-export type TAppRouteProps = RouteProps & {
-    authOnly?: boolean
-    roles?: EUserRole[]
-}
-
-export enum EAppRoutes {
-    ABOUT = 'about',
-    MAIN = 'main',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLE_DETAILS = 'article_details',
-    ARTICLE_CREATE = 'article_create',
-    ARTICLE_EDIT = 'article_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN = 'forbidden',
-    // last
-    NOT_FOUND = 'not_found'
-}
-
-export const RoutePath: Record<EAppRoutes, string> = {
-    [EAppRoutes.MAIN]: '/',
-    [EAppRoutes.ABOUT]: '/about',
-    [EAppRoutes.PROFILE]: '/profile/',
-    [EAppRoutes.ARTICLES]: '/articles',
-    [EAppRoutes.ARTICLE_DETAILS]: '/articles/',
-    [EAppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [EAppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [EAppRoutes.ADMIN_PANEL]: '/admin',
-    [EAppRoutes.FORBIDDEN]: '/forbidden',
-    // last
-    [EAppRoutes.NOT_FOUND]: '*'
-}
+import { NotFoundPage } from '@/pages/NotFoundPage'
+import { EAppRoutes, RoutePath } from '@/shared/const/router'
+import { type TAppRouteProps } from '@/shared/types/router'
 
 export const routeConfig: Record<EAppRoutes, TAppRouteProps> = {
     [EAppRoutes.MAIN]: {

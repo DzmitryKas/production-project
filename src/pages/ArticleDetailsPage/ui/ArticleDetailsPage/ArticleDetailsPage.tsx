@@ -15,7 +15,7 @@ import { ArticleRating } from '@/features/articleRating'
 
 interface IArticleDetailsPageProps {
     className?: string
-    articleId: string
+    articleId?: string
 }
 
 const reducers: TReducersList = {
