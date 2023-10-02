@@ -51,7 +51,14 @@ module.exports = {
         '@typescript-eslint/consistent-type-imports': 'warn',
         'n/no-callback-literal': 'off',
         'dzmitry-kas-plugin/path-checker': ['error', { alias: '@' }],
-        'dzmitry-kas-plugin/public-api-imports': ['error', { alias: '@' }]
+        'dzmitry-kas-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*']
+            }
+
+        ]
     },
     globals: {
         __IS_DEV__: true,
