@@ -11,12 +11,12 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading
 } from '../../model/selectors/articleDetails'
-import { ETextAlign, ETextSize, Text } from '@/shared/ui/Text/Text'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { ETextAlign, ETextSize, Text } from '@/shared/ui/Text'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Avatar } from '@/shared/ui/Avatar'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import DateIcon from '@/shared/assets/icons/date.svg'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import { type TArticleBlock } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'

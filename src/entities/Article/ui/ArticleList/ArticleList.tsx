@@ -6,7 +6,7 @@ import { type IArticle } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { Text } from '@/shared/ui'
-import { ETextSize } from '@/shared/ui/Text/Text'
+import { ETextSize } from '@/shared/ui/Text'
 import { EArticleView } from '../../model/consts/consts'
 
 interface IArticleListProps {

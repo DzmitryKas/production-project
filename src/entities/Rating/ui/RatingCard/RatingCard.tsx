@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib'
 import { useTranslation } from 'react-i18next'
 import { Button, Card, EButtonTheme, Input, Modal, Text, Drawer } from '@/shared/ui'
 import { HStack, VStack } from '@/shared/ui/Stack'
-import { StarRating } from '@/shared/ui/StarRating/StarRating'
+import { StarRating } from '@/shared/ui/StarRating'
 import { BrowserView, MobileView } from 'react-device-detect'
 
 interface IRatingCardProps {

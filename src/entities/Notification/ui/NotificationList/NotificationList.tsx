@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useNotifications } from '../../api/notificationApi'
 import { VStack } from '@/shared/ui/Stack'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 interface INotificationListProps {
     className?: string

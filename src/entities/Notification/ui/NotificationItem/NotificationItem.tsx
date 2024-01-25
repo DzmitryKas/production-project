@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib'
 import cls from './NotificationItem.module.scss'
 import { type INotification } from '../../model/types/notification'
 import { Card, Text } from '@/shared/ui'
-import { ECardTheme } from '@/shared/ui/Card/Card'
+import { ECardTheme } from '@/shared/ui/Card'
 
 interface INotificationItemProps {
     className?: string
