@@ -21,7 +21,6 @@ const StarRating: FC<IStarRatingProps> = memo(({
     selectedStars = 0,
     onSelect
 }) => {
-    const { t } = useTranslation()
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 

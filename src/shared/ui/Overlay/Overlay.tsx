@@ -1,7 +1,6 @@
 import { type FC, memo } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './Overlay.module.scss'
-import { useTranslation } from 'react-i18next'
 
 interface IOverlayProps {
     className?: string

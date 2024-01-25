@@ -59,7 +59,7 @@ module.exports = {
             }
 
         ],
-        'ulbi-tv-plugin/layer-imports': [
+        'dzmitry-kas-plugin/layer-imports': [
             'error',
             {
                 alias: '@',

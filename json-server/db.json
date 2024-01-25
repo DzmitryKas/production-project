@@ -669,6 +669,12 @@
       "rate": 3,
       "feedback": "",
       "id": "X24fkhN"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 3,
+      "id": "Z3FigVO"
     }
   ]
 }

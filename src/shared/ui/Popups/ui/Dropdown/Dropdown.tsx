@@ -27,7 +27,6 @@ const Dropdown: FC<IDropdownProps> = memo(({
     items,
     direction = 'bottom right'
 }) => {
-    const { t } = useTranslation()
     const menuClasses = [mapDirectionClasses[direction]]
 
     return (

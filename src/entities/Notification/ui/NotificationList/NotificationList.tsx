@@ -12,7 +12,6 @@ interface INotificationListProps {
 }
 
 const NotificationList: FC<INotificationListProps> = memo(({ className }) => {
-    const { t } = useTranslation()
     const { data, isLoading } = useNotifications(null, {
         pollingInterval: 5000
     })

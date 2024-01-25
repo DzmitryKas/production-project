@@ -21,8 +21,6 @@ const CommentCard: FC<ICommentCardProps> = memo(({
     comment,
     isLoading
 }) => {
-    const { t } = useTranslation()
-
     if (isLoading) {
         return (
             <VStack gap={'8'} max className={classNames(cls.CommentCard, {}, [className, cls.loading])}>

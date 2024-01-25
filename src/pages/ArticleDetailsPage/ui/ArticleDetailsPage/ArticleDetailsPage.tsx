@@ -23,7 +23,6 @@ const reducers: TReducersList = {
 }
 
 const ArticleDetailsPage: FC<IArticleDetailsPageProps> = ({ className }) => {
-    const { t } = useTranslation('article-details')
     const { id } = useParams<{ id: string }>()
 
     if (!id) {

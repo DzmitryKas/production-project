@@ -30,8 +30,6 @@ const ArticleViewSelector: FC<IArticleViewSelectorProps> = memo(({
     view: currentView,
     onViewClick
 }) => {
-    const { t } = useTranslation()
-
     const onClick = (newView: EArticleView) => () => {
         onViewClick?.(newView)
     }

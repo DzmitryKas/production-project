@@ -7,6 +7,7 @@ import { type TReducersList } from '@/shared/lib/components/DynamicModuleLoader/
 import { articleDetailsReducer } from '@/entities/Article/testing'
 // eslint-disable-next-line dzmitry-kas-plugin/public-api-imports
 import { addCommentFormReducer } from '@/features/addCommentForm/testing'
+// eslint-disable-next-line dzmitry-kas-plugin/layer-imports
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage'
 // eslint-disable-next-line dzmitry-kas-plugin/public-api-imports
 import { profileReducer } from '@/features/editableProfileCard/testing'

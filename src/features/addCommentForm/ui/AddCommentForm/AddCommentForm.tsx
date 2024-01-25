@@ -24,7 +24,6 @@ const AddCommentForm: FC<IAddCommentFormProps> = memo(({
 }) => {
     const { t } = useTranslation()
     const text = useSelector(getAddCommentFormText)
-    const error = useSelector(getAddCommentFormError)
     const dispatch = useAppDispatch()
 
     const onCommentTextChange = useCallback((value: string) => {

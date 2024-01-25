@@ -4,8 +4,8 @@ import cls from './Navbar.module.scss'
 import { AppLink, Button, EButtonTheme, ETextTheme, Text } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from '@/features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from '@/entities/User'
 import { EAppLinkTheme } from '@/shared/ui/AppLink/AppLink'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/notificationButton'
@@ -45,8 +45,8 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
                     {t('Создать статью')}
                 </AppLink>
                 <HStack gap={'16'} className={cls.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
+                    <NotificationButton/>
+                    <AvatarDropdown/>
                 </HStack>
             </header>
         )
@@ -61,7 +61,7 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
             >
                 {t('Войти')}
             </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
         </header>
     )
 })

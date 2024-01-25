@@ -1,5 +1,4 @@
 import { createEntityAdapter, createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { type IComment } from '@/entities/Comment'
 import { type IStateSchema } from '@/app/providers/StoreProvider'
 import { type IArticleDetailsRecommendationSchema } from '../types/ArticleDetailsRecommendationSchema'
 import { type IArticle } from '@/entities/Article'

@@ -7,9 +7,7 @@ import { type To } from '@remix-run/router'
 import { type NavigateOptions } from 'react-router/dist/lib/context'
 import { type IArticleDetailsSchema } from '@/entities/Article'
 import {
-    type IArticleDetailsCommentsSchema,
-    type IArticleDetailsPageSchema,
-    type IArticleDetailsRecommendationSchema
+    type IArticleDetailsPageSchema
 } from '@/pages/ArticleDetailsPage'
 import { type IAddCommentFormSchema } from '@/features/addCommentForm'
 import { type IArticlesPageSchema } from '@/pages/ArticlePage'

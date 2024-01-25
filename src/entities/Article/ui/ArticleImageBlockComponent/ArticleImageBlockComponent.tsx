@@ -11,8 +11,6 @@ interface IArticleImageBlockComponentProps {
 }
 
 const ArticleImageBlockComponent: FC<IArticleImageBlockComponentProps> = memo(({ className, block }) => {
-    const { t } = useTranslation()
-
     return (
         <div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
             <img src={block.src} alt={block.title} className={cls.img} />

@@ -11,8 +11,6 @@ interface IArticleTextBlockComponentProps {
 }
 
 const ArticleTextBlockComponent: FC<IArticleTextBlockComponentProps> = memo(({ className, block }) => {
-    const { t } = useTranslation()
-
     return (
         <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
             {block.title && (

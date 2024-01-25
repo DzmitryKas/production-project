@@ -22,8 +22,6 @@ const Tabs: FC<ITabsProps> = memo(({
     value,
     onTabClick
 }) => {
-    const { t } = useTranslation()
-
     const clickHandle = useCallback((tab: ITabItem) => {
         return () => {
             onTabClick(tab)

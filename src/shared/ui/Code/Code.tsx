@@ -1,4 +1,4 @@
-import { type FC, memo, type ReactNode, useCallback } from 'react'
+import { type FC, memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './Code.module.scss'
 import { Button, EButtonTheme } from '../Button/Button'

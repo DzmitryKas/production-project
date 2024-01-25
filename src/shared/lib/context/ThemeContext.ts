@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { type ETheme } from '@/app/providers/ThemeProvider/consts/consts'
+import { type ETheme } from '@/shared/const/theme'
 
 export interface ThemeContextProps {
     theme?: ETheme
@@ -8,5 +8,3 @@ export interface ThemeContextProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({})
-
-export const LOCAL_STORAGE_THEME_KEY = 'theme'

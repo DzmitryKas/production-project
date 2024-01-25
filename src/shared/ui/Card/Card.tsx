@@ -22,8 +22,6 @@ const Card: FC<ICardProps> = memo(({
     max = false,
     ...otherProps
 }) => {
-    const { t } = useTranslation()
-
     return (
         <div className={classNames(cls.Card, { [cls.maxWidth]: max }, [className, cls[theme]])} {...otherProps}>
             {children}

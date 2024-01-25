@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect } from 'react'
+import { type ReactNode, useEffect } from 'react'
 import { useDispatch, useStore } from 'react-redux'
 import { type IReduxStoreWithManager, type IStateSchema, type TStateSchemaKey } from '@/app/providers/StoreProvider'
 import { type Reducer } from '@reduxjs/toolkit'

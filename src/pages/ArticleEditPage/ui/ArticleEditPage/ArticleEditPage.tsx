@@ -10,7 +10,6 @@ interface IArticleEditPageProps {
 }
 
 const ArticleEditPage: FC<IArticleEditPageProps> = memo(({ className }) => {
-    const { t } = useTranslation()
     const { id } = useParams<{ id: string }>()
     const isEdit = Boolean(id)
 
