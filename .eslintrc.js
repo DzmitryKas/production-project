@@ -58,6 +58,13 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*']
             }
 
+        ],
+        'ulbi-tv-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+            }
         ]
     },
     globals: {
