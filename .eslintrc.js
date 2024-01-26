@@ -18,11 +18,13 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'dzmitry-kas-plugin'
+        'dzmitry-kas-plugin',
+        'unused-imports'
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'unused-imports/no-unused-imports': 'error',
         '@typescript-eslint/indent': [2, 4],
         indent: [2, 4, {
             SwitchCase: 1,

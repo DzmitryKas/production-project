@@ -1,7 +1,6 @@
 import { type FC, memo } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './NotificationList.module.scss'
-import { useTranslation } from 'react-i18next'
 import { useNotifications } from '../../api/notificationApi'
 import { VStack } from '@/shared/ui/Stack'
 import { NotificationItem } from '../NotificationItem/NotificationItem'

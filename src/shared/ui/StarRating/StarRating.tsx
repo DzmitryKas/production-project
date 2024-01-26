@@ -1,7 +1,6 @@
 import { type FC, memo, useState } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './StarRating.module.scss'
-import { useTranslation } from 'react-i18next'
 import { Icon } from '../Icon/Icon'
 import StarIcon from '@/shared/assets/icons/star.svg'
 

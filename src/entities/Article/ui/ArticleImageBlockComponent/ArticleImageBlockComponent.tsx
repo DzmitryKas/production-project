@@ -1,7 +1,6 @@
 import { type FC, memo } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './ArticleImageBlockComponent.module.scss'
-import { useTranslation } from 'react-i18next'
 import { type IArticleImageBlock } from '../../model/types/article'
 import { ETextAlign, Text } from '@/shared/ui/Text'
 

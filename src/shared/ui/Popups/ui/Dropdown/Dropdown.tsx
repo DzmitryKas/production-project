@@ -1,7 +1,6 @@
 import { type FC, Fragment, memo, type ReactNode } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './Dropdown.module.scss'
-import { useTranslation } from 'react-i18next'
 import { Menu } from '@headlessui/react'
 import { type TDropdownDirection } from '@/shared/types/ui'
 import { AppLink } from '../../../AppLink/AppLink'
