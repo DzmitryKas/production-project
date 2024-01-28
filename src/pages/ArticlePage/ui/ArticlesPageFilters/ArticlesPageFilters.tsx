@@ -3,8 +3,6 @@ import { classNames, useAppDispatch } from '@/shared/lib'
 import cls from './ArticlesPageFilters.module.scss'
 import { useTranslation } from 'react-i18next'
 import {
-    ArticleTypeTabs,
-    ArticleViewSelector,
     type EArticleSortField,
     type EArticleType,
     type EArticleView
@@ -19,10 +17,12 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slices/articlePageSlice'
 import { Card, Input } from '@/shared/ui'
-import { ArticleSortSelector } from '@/entities/Article'
 import { type TSortOrder } from '@/shared/types'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 
 interface IArticlesPageFiltersProps {
     className?: string

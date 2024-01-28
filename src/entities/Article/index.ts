@@ -1,7 +1,4 @@
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 export { getArticleDetailsData } from './model/selectors/articleDetails'
-export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export type { IArticleDetailsSchema } from './model/types/articleDetailsSchema'
 export { type IArticle } from './model/types/article'
