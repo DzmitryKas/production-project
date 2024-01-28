@@ -10,7 +10,7 @@ import { EAppLinkTheme } from '@/shared/ui/AppLink'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/notificationButton'
 import { AvatarDropdown } from '@/features/avatarDropdown'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 
 interface INavbarProps {
     className?: string
@@ -38,7 +38,7 @@ const Navbar: FC<INavbarProps> = memo(({ className }) => {
                     theme={ETextTheme.INVERTED}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={EAppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >

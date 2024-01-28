@@ -8,56 +8,62 @@ import { AdminPanelPage } from '@/pages/AdminPanelPage'
 import { EUserRole } from '@/entities/User'
 import { ForbiddenPage } from '@/pages/ForbiddenPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
-import { EAppRoutes, RoutePath } from '@/shared/const/router'
+import {
+    EAppRoutes,
+    getRouteAbout, getRouteAdmin, getRouteArticleCreate, getRouteArticleDetails, getRouteArticleEdit,
+    getRouteArticles, getRouteForbidden,
+    getRouteMain,
+    getRouteProfile
+} from '@/shared/const/router'
 import { type TAppRouteProps } from '@/shared/types/router'
 
 export const routeConfig: Record<EAppRoutes, TAppRouteProps> = {
     [EAppRoutes.MAIN]: {
-        path: RoutePath.main,
+        path: getRouteMain(),
         element: <MainPage />
     },
     [EAppRoutes.ABOUT]: {
-        path: RoutePath.about,
+        path: getRouteAbout(),
         element: <AboutPage />
     },
     [EAppRoutes.PROFILE]: {
-        path: `${RoutePath.profile}:id`,
+        path: getRouteProfile(':id'),
         element: <ProfilePage />,
         authOnly: true
     },
     [EAppRoutes.ARTICLES]: {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true
     },
     [EAppRoutes.ARTICLE_DETAILS]: {
-        path: `${RoutePath.article_details}:id`,
+        path: getRouteArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true
     },
     [EAppRoutes.ARTICLE_CREATE]: {
-        path: `${RoutePath.article_create}`,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true
     },
     [EAppRoutes.ARTICLE_EDIT]: {
-        path: `${RoutePath.article_edit}`,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true
     },
     [EAppRoutes.ADMIN_PANEL]: {
-        path: `${RoutePath.admin_panel}`,
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [EUserRole.MANAGER, EUserRole.ADMIN]
     },
     [EAppRoutes.FORBIDDEN]: {
-        path: `${RoutePath.forbidden}`,
+        path: getRouteForbidden(),
         element: <ForbiddenPage />
     },
     // last
     [EAppRoutes.NOT_FOUND]: {
-        path: RoutePath.not_found,
+        path: '*',
         element: <NotFoundPage />
     }
 }

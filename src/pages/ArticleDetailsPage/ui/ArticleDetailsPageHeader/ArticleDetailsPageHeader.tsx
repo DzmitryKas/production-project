@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { getCatEditArticle } from '../../model/selectors/article'
 import { getArticleDetailsData } from '@/entities/Article'
 import { HStack } from '@/shared/ui/Stack'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router'
 
 interface IArticleDetailsPageHeaderProps {
     className?: string
@@ -20,11 +20,11 @@ const ArticleDetailsPageHeader: FC<IArticleDetailsPageHeaderProps> = memo(({ cla
     const article = useSelector(getArticleDetailsData)
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
+        navigate(getRouteArticles())
     }, [navigate])
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.article_details}${article?.id || ''}/edit`)
+        navigate(getRouteArticleDetails(article?.id || ''))
     }, [article?.id, navigate])
 
     return (

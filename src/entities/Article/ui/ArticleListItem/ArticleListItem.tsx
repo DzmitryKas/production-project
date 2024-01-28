@@ -10,7 +10,7 @@ import { Avatar } from '@/shared/ui/Avatar'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useNavigate } from 'react-router-dom'
 import { EArticleBlockType, EArticleView } from '../../model/consts/consts'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails } from '@/shared/const/router'
 
 interface IArticleListItemProps {
     className?: string
@@ -29,7 +29,7 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
     const navigate = useNavigate()
 
     const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id)
+        navigate(getRouteArticleDetails(article.id))
     }, [article.id, navigate])
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />
@@ -62,7 +62,7 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                         >
                             <Button theme={EButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
@@ -78,7 +78,7 @@ const ArticleListItem: FC<IArticleListItemProps> = memo(({
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card className={cls.card}>
