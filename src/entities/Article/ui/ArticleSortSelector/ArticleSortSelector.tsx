@@ -1,4 +1,4 @@
-import { type FC, memo, useCallback, useMemo } from 'react'
+import { type FC, memo, useMemo } from 'react'
 import { classNames } from '@/shared/lib'
 import cls from './ArticleSortSelector.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -23,7 +23,7 @@ const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo(({
 }) => {
     const { t } = useTranslation()
 
-    const orderOptions = useMemo<ISelectOption[]>(() => [
+    const orderOptions = useMemo<Array<ISelectOption<TSortOrder>>>(() => [
         {
             value: 'asc',
             content: t('возрастанию')
@@ -33,7 +33,7 @@ const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo(({
             content: t('убыванию')
         }
     ], [t])
-    const sortFieldOptions = useMemo<ISelectOption[]>(() => [
+    const sortFieldOptions = useMemo<Array<ISelectOption<EArticleSortField>>>(() => [
         {
             value: EArticleSortField.CREATED,
             content: t('дате создания')
@@ -48,26 +48,19 @@ const ArticleSortSelector: FC<IArticleSortSelectorProps> = memo(({
         }
     ], [t])
 
-    const changeSortHandler = useCallback((newSort: string) => {
-        onChangeSort(newSort as EArticleSortField)
-    }, [onChangeSort])
-    const changeOrderHandler = useCallback((newOrder: string) => {
-        onChangeOrder(newOrder as TSortOrder)
-    }, [onChangeOrder])
-
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
             <Select
                 options={sortFieldOptions}
                 label={t('Сортировать ПО')}
                 value={sort}
-                onChange={changeSortHandler}
+                onChange={onChangeSort}
             />
             <Select
                 options={orderOptions}
                 label={t('по')}
                 value={order}
-                onChange={changeOrderHandler}
+                onChange={onChangeOrder}
                 className={cls.order}
             />
         </div>
