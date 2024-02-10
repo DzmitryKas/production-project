@@ -49,7 +49,7 @@ const AvatarDropdown: FC<IAvatarDropdownProps> = memo(({ className }) => {
                     onClick: onLogout
                 }
             ]}
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
         />
     )
 })
