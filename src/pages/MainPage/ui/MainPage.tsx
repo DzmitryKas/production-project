@@ -12,7 +12,7 @@ const MainPage = () => {
     }
 
     return (
-        <Page>
+        <Page data-testid={'MainPage'}>
             {t('Главная')}
             <Input placeholder={'Введите текст'} value={value} onChange={onChange} />
         </Page>

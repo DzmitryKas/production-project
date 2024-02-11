@@ -17,7 +17,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slices/articlePageSlice'
 import { Card, Input } from '@/shared/ui'
-import { type TSortOrder } from '@/shared/types'
+import { type TSortOrder } from '@/shared/types/sort'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { ArticleViewSelector } from '@/features/ArticleViewSelector'
