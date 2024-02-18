@@ -2,9 +2,9 @@ import { type FC, memo } from 'react'
 import { classNames } from '@/shared/lib'
 import { useTranslation } from 'react-i18next'
 import { type IComment } from '../../model/types/comment'
-import { CommentCard } from '../CommentCard/CommentCard'
 import { Text } from '@/shared/ui/Text'
 import { VStack } from '@/shared/ui/Stack'
+import { CommentCard } from '../CommentCard/CommentCard'
 
 interface ICommentListProps {
     className?: string
